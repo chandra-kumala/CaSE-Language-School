@@ -10,7 +10,7 @@ import datetime
 dom = datetime.datetime.now().strftime ("%d")
 
 class HomePage():
-    pass()
+    pass
 
 
 # class HomePage(Page, Dreamer, Seo):
@@ -29,8 +29,8 @@ class HomePage():
 
 #     content_panels = Page.content_panels + Dreamer.panels + [
 #         InlinePanel('carousel_items', label="Carousel images"),
-#     ] 
-     
+#     ]
+
 #     promote_panels = Page.promote_panels + Seo.panels
 
 
