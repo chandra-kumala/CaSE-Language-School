@@ -5,3 +5,5 @@ env
 *.pyc
 db.sqlite3
 .vscode/settings.json
+tools/
+contact/
