@@ -4,7 +4,7 @@ from wagtail.core.models import Page, Orderable
 from wagtail.admin.edit_handlers import InlinePanel, FieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from tools.models import Dreamer, Seo
+#from tools.models import Dreamer, Seo
 
 import datetime
 dom = datetime.datetime.now().strftime ("%d")
@@ -44,7 +44,6 @@ class HomePage():
 #     title = models.CharField(blank=True, max_length=250)
 #     caption = models.CharField(blank=True, max_length=250)
 #     image = models.ForeignKey('wagtailimages.Image',  null=True, blank=True, on_delete=models.CASCADE, related_name='+')
-
 #     panels = [
 #         FieldPanel('title'),
 #         FieldPanel('caption'),
