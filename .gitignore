@@ -9,3 +9,4 @@ tools/
 contact/
 case/settings/settings_secret.py
 home/nohup.out
+nohup.out
