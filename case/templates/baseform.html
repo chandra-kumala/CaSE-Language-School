@@ -21,8 +21,7 @@
     <meta property="og:title" content="{{ page.seo_title }}" />
     <meta name="description" content="{{ page.search_description }}">
     <meta property="og:description" content="{{ page.search_description }}">
-    <meta property="og:image"
-        content="{% if page.seo_image %}{% image page.seo_image fill-300x300 as img %}{{img.url}}{% else %}{% static 'images/cks/logo-square.png' %}{% endif%}">
+    <meta property="og:image" content="{% if page.seo_image %}{% image page.seo_image fill-300x300 as img %}{{img.url}}{% else %}{% static 'images/cks/logo-square.png' %}{% endif%}">
     <meta property="og:url" content="{{ request.META.HTTP_HOST }}" />
     <meta property="og:type" content="article" />
 
@@ -31,11 +30,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/case.css' %}">
 
     <!-- Icon in browser tab -->
-    <link rel="icon" href="{% static 'images/cks/logo.ico' %}">
+    <link rel="icon" href="{% static 'images/logo.ico' %}">
 
     {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
@@ -48,23 +46,15 @@
     {% wagtailuserbar %}
     {% load social_tags %}
 
-    <main  class="pt-5 d-flex flex-column align-items-center justify-content-center">
-        <div class="card" style="width: 36rem;">
-            <img class="card-img" src="{% static "images/card-header-small.jpg" %}" alt="Card image cap">
-            <div class="card-img-overlay">
-                <img class="mt-3" src="{% static "images/logo.svg" %}" width="300px" alt="Logo Image">
+    <!-- {% include 'home/_header.html' %} -->
 
-            </div>
-            <div class="card-body">
-                {% include 'home/_nav.html' %}
+    <main class="pt-5 d-flex flex-column align-items-center justify-content-center">
 
-                {% block content %}{% endblock %}
-            </div>
-        </div>
+        {% block content %}{% endblock %}
 
     </main>
 
-    <!-- {% include 'home/_footer.html' %} -->
+    {% include 'home/_footer.html' %}
 
     {# Global javascript #}
 
