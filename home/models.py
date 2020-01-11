@@ -9,7 +9,6 @@ from tools.models import Dreamer, Seo
 import datetime
 dom = datetime.datetime.now().strftime ("%d")
 
-
 class HomePage(Page, Dreamer, Seo):
 
     def get_context(self, request):
@@ -20,7 +19,6 @@ class HomePage(Page, Dreamer, Seo):
 
         return context
 
-    parent_page_types = ['wagtailcore.page', 'home.HomePage']
     subpage_types = ['tools.Index', 'tools.GoogleMaps', 'tools.GoogleCalendar', 'home.HomePage']
 
 
