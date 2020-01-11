@@ -23,7 +23,6 @@ class HomePage(Page, Seo):
 
         return context
 
-    parent_page_types = ['wagtailcore.page', 'home.HomePage']
     subpage_types = ['tools.Index', 'tools.GoogleMaps',
                      'tools.GoogleCalendar', 'home.HomePage',
                      'contact.ContactPage']
