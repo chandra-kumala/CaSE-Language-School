@@ -22,8 +22,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-            {% for menu in menuitems   %}<a class="nav-item nav-link active"
-                href="{{menu.url}}">{{menu.title}}</a>{% endfor %}
+            {% for menu in menuitems   %}
+            {% if page.url != menu.url %}
+            <a class="nav-item nav-link active" href="{{menu.url}}">{{menu.title}}</a>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </nav>
