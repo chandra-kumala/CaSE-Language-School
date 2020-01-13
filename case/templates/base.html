@@ -51,19 +51,19 @@
     <main  class="pt-5 d-flex flex-column align-items-center justify-content-center">
 
       <div class="card">
+        <div style="position:relative;">
         <img class="card-img" src="{% static "images/card-header-small.jpg" %}" alt="Card image cap">
-        <div class="card-img-overlay">
-            <img class="mx-3 d-block d-sm-none" src="{% static "images/logo.svg" %}" width="150px"
-            alt="Logo Image">
-        <img class="mx-3 d-none d-sm-block d-lg-none" src="{% static "images/logo.svg" %}" width="225px"
-            alt="Logo Image">
-        <img class="mx-3 d-none d-lg-block" src="{% static "images/logo.svg" %}" width="300px" alt="Logo Image">
-        </div>
-        <div class="card-body">
-            {% include 'home/_nav.html' %}
-
-          {% block content %}{% endblock %}
-        </div>
+            <div class="card-img-overlay">
+                <img class="mx-3 d-block d-sm-none" src="{% static "images/logo.svg" %}" width="150px" alt="Logo Image">
+                <img class="mx-3 d-none d-sm-block d-md-none" src="{% static "images/logo.svg" %}" width="200px" alt="Logo Image">
+                <img class="mx-3 d-none d-md-block d-lg-none" src="{% static "images/logo.svg" %}" width="250px" alt="Logo Image">
+                <img class="mx-3 d-none d-lg-block" src="{% static "images/logo.svg" %}" width="300px" alt="Logo Image">
+            </div>
+        </div>  
+            <div class="card-body">
+                {% include 'home/_nav.html' %}
+                {% block content %}{% endblock %}
+            </div>
       </div>
     </main>
 
