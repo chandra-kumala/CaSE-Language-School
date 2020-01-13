@@ -8,10 +8,10 @@
             alt="Logo Image"><span class="d-none d-sm-block">CaSE</span>
     </a> -->
     <div class="d-flex justify-content-start">    
+        {% social_icons %}
         {% if page.url != request.site.root_page.url %}      
         <a class="m-3 text-center text-info rounded-circle py-0" href="{{ page.get_parent.url }}"><i class="fas fa-home fa-2x"></i></a>
-            {% endif %}
-    {% social_icons %}
+        {% endif %}
     </div>
             
 
