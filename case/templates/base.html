@@ -60,6 +60,8 @@
         <img class="mx-3 d-none d-lg-block" src="{% static "images/logo.svg" %}" width="300px" alt="Logo Image">
         </div>
         <div class="card-body">
+            {% include 'home/_nav.html' %}
+
           {% block content %}{% endblock %}
         </div>
       </div>
