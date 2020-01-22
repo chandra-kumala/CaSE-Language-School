@@ -11,3 +11,25 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+/* Form validation errors */
+
+ul.errorlist li {
+    padding: 10px;
+    background-color: #FFFF00;
+    color: black;
+}
+
+ul, li {
+    padding: 0%;
+    margin: 0%;
+}
+
+.errorlist li {
+    text-decoration: solid;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 0px;
+    background-color: #f44336;
+    color: white;
+  }
