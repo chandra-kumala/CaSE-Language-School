@@ -1,17 +1,14 @@
-{% load static i18n %}
+{% load static i18n social_tags %}
 
-<!-- Return to{{ page.get_parent.title }} -->
-<!-- Footer -->
 <footer class="page-footer font-small special-color-dark pt-4">
-
-    <div class="container d-flex flex-column flex-lg-row justify-content-around">
-
-        <!-- Copyright -->
+    <div class="container d-flex flex-column justify-content-around">
+        <div class="footer-copyright text-center text-light py-3">
+            {% social_icons %}
+        </div>
         <div class="footer-copyright text-center text-light py-3">
             <small>
-                © 2019 Copyright: CaSE Medan</small></div>
-        <!-- Copyright -->
+                © 2019 Copyright: CaSE Medan
+            </small>
+        </div>
     </div>
-
 </footer>
-<!-- Footer -->
