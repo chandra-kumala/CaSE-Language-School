@@ -1,20 +1,13 @@
 {% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
-{% load social_tags %}
 
 {% if menuitems %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light my-0 d-flex justify-content-between">
-    <!-- <a class="navbar-brand brand" href="#">
-        <img class="mx-3 d-none d-block d-sm-none" src="{% static "images/logo.svg" %}" width="55px"
-            alt="Logo Image"><span class="d-none d-sm-block">CaSE</span>
-    </a> -->
+
     <div class="d-flex justify-content-start">    
-        {% social_icons %}
         {% if page.url != request.site.root_page.url %}      
         <a class="m-3 text-center text-info rounded-circle py-0" href="{{ page.get_parent.url }}"><i class="fas fa-home fa-2x"></i></a>
         {% endif %}
     </div>
-            
-
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
