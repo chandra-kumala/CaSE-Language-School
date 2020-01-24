@@ -25,6 +25,10 @@ ul, li {
     margin: 0%;
 }
 
+.main.card-body{
+    padding: 0;
+}
+
 .errorlist li {
     text-decoration: solid;
     border-radius: 5px;
