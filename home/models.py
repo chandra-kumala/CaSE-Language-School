@@ -6,8 +6,8 @@ from wagtail.core.blocks import TextBlock, StructBlock
 from wagtail.admin.edit_handlers import InlinePanel, FieldPanel, StreamFieldPanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.core.fields import StreamField
-from tools.models import Seo, CommonStreamBlock, Item
 
+from contact.models import Seo, CommonStreamBlock
 
 class HomePage(Page, Seo):
     heading = models.CharField(max_length=250, null=True, blank=True)
