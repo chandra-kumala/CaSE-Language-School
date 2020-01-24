@@ -51,6 +51,19 @@
 {% endif %}
 
 <body class="{% block body_class %}{% endblock %} container pt-5 d-flex flex-column align-items-center justify-content-center">
+    {% if page.google_ad_code %}
+    <!-- Event snippet for CaSE dummy conversion page -->
+    <script>
+        gtag('event', 'conversion', {'send_to': '{{ google.site_tag }}/{{ page.google_ad_code }}'});
+    </script>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        {% include 'home/_footer.html' %}
+    {% endblock %}
+
 
 
     {# Global javascript #}
