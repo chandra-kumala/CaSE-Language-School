@@ -33,6 +33,13 @@ ul, li {
     background-color: #f44336;
     color: white;
   }
+
+form, main{
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
 .row-reverse{
     flex-direction: row-reverse;
 }
