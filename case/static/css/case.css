@@ -44,6 +44,8 @@ form, main{
     padding-right: 20px;
     padding-bottom: 20px;
 }
+
+
 .row-reverse{
     flex-direction: row-reverse;
 }
