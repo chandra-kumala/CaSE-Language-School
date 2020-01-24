@@ -11,3 +11,5 @@ case/settings/settings_secret.py
 home/nohup.out
 nohup.out
 static/
+media/
+nohup.out
