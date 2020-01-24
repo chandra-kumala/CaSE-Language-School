@@ -33,3 +33,6 @@ ul, li {
     background-color: #f44336;
     color: white;
   }
+.row-reverse{
+    flex-direction: row-reverse;
+}
