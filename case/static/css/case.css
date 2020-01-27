@@ -47,3 +47,8 @@ form, main{
 .row-reverse{
     flex-direction: row-reverse;
 }
+
+.signature{
+    font-family: 'Caveat Brush', cursive;
+
+}
