@@ -12,8 +12,6 @@ main{
     justify-content: center;
 }
 
-/* Form validation errors */
-
 ul.errorlist li {
     padding: 10px;
     background-color: #FFFF00;
