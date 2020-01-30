@@ -9,6 +9,9 @@ h1, h2, h3, h4, h5 {
     background-color: #b8c5ff;
     margin: 0;
 }
+p {
+    margin: 0mm;
+}
 
 nav, label {
     font-family: 'Courgette', cursive;

@@ -6,7 +6,7 @@
     </h2>
 
 {% elif block.block_type == 'paragraph' %}
-    <div class="m-5">
+    <div class="mx-5 my-4">
     {{ block.value }}
     </div>
 
@@ -43,9 +43,13 @@
     <div class="youtube mx-auto">{{ block.value }}</div>
 
 {% elif block.block_type == 'buttonLink' %}
-    <div class="row justify-content-center"><a class=" btn btn-primary btn-lg" href="{{ block.value.link }}"
-        role="button">{{ block.value.text }}</a></div>
+    <div class="row justify-content-center m-0 p-3">
+        <a class=" btn btn-primary btn-lg" href="{{ block.value.link }}"
+        role="button">{{ block.value.text }}</a>
+    </div>
 
+
+{% elif block.block_type == 'carousel' %}
         {% if page.carousel_items.all %}
         <div class="carousel-embed">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
