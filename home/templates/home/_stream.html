@@ -1,0 +1,95 @@
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+
+{% if block.block_type == 'heading' %}
+    <h2 class="text-center p-4">   
+        {{ block.value }}
+    </h2>
+
+{% elif block.block_type == 'paragraph' %}
+    <div class="m-5">
+    {{ block.value }}
+    </div>
+
+{% elif block.block_type == 'image' %}
+    {% image block.value height-200 as photo %}
+    <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="full-width w-100  h-auto" />
+    <!-- {% image block.value width-400 class="full-width w-100 h-auto" alt="Responsive image" %} -->
+
+{% elif block.block_type == 'testimonial' %}
+    <div class="card mx-auto border-0" style="max-width: 540px;">
+        <div class="row {% if block.value.test_reversed %} row-reverse {% else %} {% endif %}">
+            <div class="col-md-4 text-center">
+                {% image block.value.test_pic height-200 as photo %}
+                <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}"
+                    class="card-img col-6 col-md-12 p-3" />
+                    <div
+                    class="card-title fa-2x m-0 signature text-dark">
+                    {{ block.value.test_name }}</div>
+            </div>
+            <div class="col-md-8 my-auto">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <span class=" text-dark"><i class="fas fa-quote-left"></i></span>
+                        <p class="card-text signature text-dark m-0 text-center"> {{ block.value.test_quote }} </p>
+                        <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right"></i></span>
+                    </div>
+   
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% elif block.block_type == 'embed' %}
+    <div class="youtube mx-auto">{{ block.value }}</div>
+
+{% elif block.block_type == 'buttonLink' %}
+    <div class="row justify-content-center"><a class=" btn btn-primary btn-lg" href="{{ block.value.link }}"
+        role="button">{{ block.value.text }}</a></div>
+
+        {% if page.carousel_items.all %}
+        <div class="carousel-embed">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+        
+                    {% for item in page.carousel_items.all %}
+                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                        {% image item.image fill-1080x600 class="d-block img-fluid" alt="..." %}
+                        {% if item.title or item.caption %}
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ item.title }}</h5>
+                            <p>{{ item.caption }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+        
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
+{% elif block.block_type == 'jumbotron' %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+
+            <h1 class="display-4">{{ page.heading }}</h1>
+            {% if page.text %}<p class="lead">{{ page.text | richtext }}</p>{% endif %}
+            {% if page.buttonUrl and page.buttonLabel %}<p class="lead"><a class="btn btn-primary btn-lg" href="{{ page.buttonUrl }}" role="button">{{ page.buttonLabel }}</a></p>{% endif %}
+
+        </div>
+    </div>
+
+{% endif %}

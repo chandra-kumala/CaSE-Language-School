@@ -2,9 +2,9 @@
 
 {% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
-
 {% block extra_css %}
+
+<link href="https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap" rel="stylesheet">
 
 {% endblock extra_css %}
 
@@ -15,7 +15,11 @@
         {% endblock %}
 
         {% for block in page.my_stream %}
-                {% include 'home/_stream.html' %}
+            {% include 'home/_stream.html' %}
         {% endfor %}
+
+        {% block form %}
+            {% include 'home/_form.html' %}
+        {% endblock %}
 
 {% endblock content %}
