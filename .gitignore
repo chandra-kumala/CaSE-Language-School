@@ -12,3 +12,13 @@ home/nohup.out
 nohup.out
 media/
 nohup.out
+case/settings/base.py
+case/static/css
+case/static/js
+case/static/less
+case/static/metadata
+case/static/scss
+case/static/svgs
+case/static/webfonts
+case/static/sprites
+notes.txt
