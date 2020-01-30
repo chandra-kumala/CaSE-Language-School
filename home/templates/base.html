@@ -1,4 +1,5 @@
-{% load static wagtailuserbar wagtailimages_tags google_tags %}
+{% load static wagtailuserbar wagtailimages_tags google_tags google %}
+<!-- google_tags -->
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -27,9 +28,12 @@
     <meta property="og:type" content="article" />
 
     {# Global stylesheets #}
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/case.css' %}">
 
@@ -43,15 +47,16 @@
 
 </head>
 
-{% if not request.is_preview %}
-{% google_tags %}
-{% endif %}
+<body class="{% block body_class %}{% endblock %} container pt-5 d-flex flex-column align-items-center justify-content-center"
+    style="max-width: 700px;">
+    {% wagtailuserbar %}
 
-<body class="{% block body_class %}{% endblock %} container pt-5 d-flex flex-column align-items-center justify-content-center">
+    {% google_tags %}
+
     {% if page.google_ad_code %}
     <!-- Event snippet for CaSE dummy conversion page -->
     <script>
-        gtag('event', 'conversion', {'send_to': '{{ google.site_tag }}/{{ page.google_ad_code }}'});
+        gtag('event', 'conversion', {'send_to': '{% google_tag %}/{{ page.google_ad_code }}'});
     </script>
     {% endif %}
 
