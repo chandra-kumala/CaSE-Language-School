@@ -3,12 +3,13 @@
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
     font-family: 'Courgette', cursive;
     font-weight: 700;
     background-color: #b8c5ff;
     margin: 0;
 }
+
 p {
     margin: 0mm;
 }
@@ -76,9 +77,11 @@ form{
 }
 
 .signature{
-    font-family: 'Caveat Brush', cursive;
-
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 2rem;
 }
+
 article{
     max-width: 540px;
 }
