@@ -223,10 +223,7 @@ class OrphanContactPage(ContactPage):
 
 
 class HomePage(Page, Seo):
-    heading = models.CharField(max_length=250, null=True, blank=True)
-    text = RichTextField(null=True, blank=True)
-    buttonLabel = models.CharField(max_length=255, null=True, blank=True)
-    buttonUrl = models.URLField(null=True, blank=True)
+
     my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
 
     def get_context(self, request):
@@ -237,13 +234,6 @@ class HomePage(Page, Seo):
         return context
 
     content_panels = Page.content_panels + [
-        MultiFieldPanel([
-            FieldPanel('heading'),
-            FieldPanel('text'),
-            FieldPanel('buttonLabel'),
-            FieldPanel('buttonUrl'),
-        ], "Jumbotron"),
-        InlinePanel('carousel_items', label="Carousel images"),
         StreamFieldPanel('my_stream', "Main content..."),
     ]
 
