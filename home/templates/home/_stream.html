@@ -32,7 +32,7 @@
     </div>
 
 {% elif block.block_type == 'testimonial' %}
-    <div class="card mx-auto mb-3 text-center stream_item {{ block.block_type }}" style="max-width: 540px;">
+    <div class="card mx-auto my-3 text-center stream_item {{ block.block_type }}" style="max-width: 540px;">
         <div class="row no-gutters {% if block.value.test_reversed %} flex-md-row-reverse {% else %} flex-md-row {% endif %}">
           <div class="col-sm-4 mx-auto w-50 w-sm-100">
             {% image block.value.test_pic height-200 as photo %}
