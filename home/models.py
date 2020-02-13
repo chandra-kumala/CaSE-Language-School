@@ -99,6 +99,18 @@ class Google(models.Model):
         return self.site_tag
 
 @register_snippet
+class Facebook(models.Model):
+    site_tag = models.CharField(max_length=255)
+
+    panels = [
+        FieldPanel('site_tag'),
+    ]
+
+    def __str__(self):
+        return self.site_tag
+
+
+@register_snippet
 class Social(models.Model):
     css = models.CharField("List CSS Classes (eg. text-primary py-0)",
                            max_length=255, null=True, blank=True)  # eg. text-primary py-0 fa-2x
