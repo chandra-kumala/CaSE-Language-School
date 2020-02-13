@@ -13,7 +13,7 @@
 {% elif block.block_type == 'image' %}
     {% image block.value height-200 as photo %}
     <div class="d-flex justify-content-center stream_item {{ block.block_type }}">
-    <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="w-75 stream_item {{ block.block_type }}" />
+    <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="w-100 stream_item {{ block.block_type }}" />
     </div>
     
 {% elif block.block_type == 'embed' %}
