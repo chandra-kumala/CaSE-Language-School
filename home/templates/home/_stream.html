@@ -34,11 +34,11 @@
 {% elif block.block_type == 'testimonial' %}
     <div class="card mx-auto mb-3 text-center stream_item {{ block.block_type }}" style="max-width: 540px;">
         <div class="row no-gutters {% if block.value.test_reversed %} flex-md-row-reverse {% else %} flex-md-row {% endif %}">
-          <div class="col-md-4">
+          <div class="col-sm-4 mx-auto w-50 w-sm-100">
             {% image block.value.test_pic height-200 as photo %}
             <img src="{{ photo.url }}" class="card-img" alt="{{ photo.alt }}">
           </div>
-          <div class="col-md-8 align-self-center">
+          <div class="col-sm-8 align-self-center">
             <div class="card-body">
                 <div class="d-flex">
                     <span class="text-dark"><i class="fas fa-quote-left fa-2x"></i></span>
