@@ -16,6 +16,7 @@ from wagtail.core.blocks import (
     URLBlock, 
     TextBlock, 
     StructBlock, 
+    ListBlock,
     StreamBlock, 
     CharBlock, 
     RichTextBlock, 
@@ -66,7 +67,8 @@ class CommonStreamBlock(StreamBlock):
         ('background', ImageChooserBlock(required=False, blank=True)),
     ])
     ])
-            
+    carousel = ListBlock(CarouselBlock(), icon="image", null=True, blank=True)
+
 
     class Meta:
         icon = 'cogs'
