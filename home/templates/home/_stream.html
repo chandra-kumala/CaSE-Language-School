@@ -1,12 +1,12 @@
 {% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 {% if block.block_type == 'heading' %}
-    <h2 class="text-center p-4">   
+    <h2 class="text-center p-4 stream_item {{ block.block_type }}">   
         {{ block.value }}
     </h2>
 
 {% elif block.block_type == 'paragraph' %}
-    <div class="mx-5 my-4">
+    <div class="mx-auto my-4 stream_item {{ block.block_type }}">
     {{ block.value }}
     </div>
 
@@ -53,7 +53,7 @@
 
 
 {% elif block.block_type == 'buttonLink' %}
-    <div class="row justify-content-center m-0 p-3">
+    <div class="row justify-content-center stream_item {{ block.block_type }}">
         <a class=" btn btn-primary btn-lg" href="{{ block.value.link }}"
         role="button">{{ block.value.text }}</a>
     </div>
