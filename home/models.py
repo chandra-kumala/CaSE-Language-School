@@ -32,6 +32,16 @@ from wagtail.snippets.models import register_snippet
 
 # from contact.models import Seo, CommonStreamBlock
 
+class CarouselBlock(StructBlock):
+    image = ImageChooserBlock()
+    title = CharBlock("Title ...", blank=True, max_length=250)
+    caption = TextBlock(required=False, blank=True)
+    button = TextBlock(required=False)
+    link = URLBlock(required=False)
+ 
+    class Meta:
+        icon = 'image'
+
 class CommonStreamBlock(StreamBlock):
     heading = CharBlock(classname="full title", blank=True)
     paragraph = RichTextBlock(blank=True)
