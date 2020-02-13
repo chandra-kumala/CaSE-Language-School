@@ -14,6 +14,21 @@
     {% image block.value height-200 as photo %}
     <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="full-width w-100  h-auto" />
     <!-- {% image block.value width-400 class="full-width w-100 h-auto" alt="Responsive image" %} -->
+    
+{% elif block.block_type == 'embed' %}
+        <div class="youtube d-flex justify-content-center stream_item {{ block.block_type }}">
+            {{ block.value }}
+        </div>
+
+{% elif block.block_type == 'mapurl' %}
+    <div class="google-embed mw-100 d-flex justify-content-center stream_item stream_item {{ block.block_type }}">
+        <iframe src="{{ block.value }}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+
+{% elif block.block_type == 'calendarurl' %}
+    <div class="google-embed mw-100 d-flex justify-content-center stream_item stream_item {{ block.block_type }}">
+        <iframe src="{{ block.value }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    </div>
 
 {% elif block.block_type == 'testimonial' %}
     <div class="card mx-auto border-0" style="max-width: 540px;">
