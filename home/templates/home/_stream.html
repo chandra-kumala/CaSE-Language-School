@@ -12,8 +12,9 @@
 
 {% elif block.block_type == 'image' %}
     {% image block.value height-200 as photo %}
-    <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="full-width w-100  h-auto" />
-    <!-- {% image block.value width-400 class="full-width w-100 h-auto" alt="Responsive image" %} -->
+    <div class="d-flex justify-content-center stream_item {{ block.block_type }}">
+    <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}" class="w-75 stream_item {{ block.block_type }}" />
+    </div>
     
 {% elif block.block_type == 'embed' %}
         <div class="youtube d-flex justify-content-center stream_item {{ block.block_type }}">
