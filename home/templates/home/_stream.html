@@ -17,7 +17,7 @@
 
 {% elif block.block_type == 'testimonial' %}
     <div class="card mx-auto border-0" style="max-width: 540px;">
-        <div class="row {% if block.value.test_reversed %} row-reverse {% else %} {% endif %}">
+        <div class="d-flex {% if block.value.test_reversed %} flex-row-reverse {% else %} flex-row {% endif %}">
             <div class="col-md-4 text-center">
                 {% image block.value.test_pic height-200 as photo %}
                 <img src="{{ photo.url }}" width="w-auto" height="h-auto" alt="{{ photo.alt }}"
@@ -29,7 +29,7 @@
             <div class="col-md-8 my-auto">
                 <div class="card-body">
                     <div class="d-flex">
-                        <span class=" text-dark"><i class="fas fa-quote-left"></i></span>
+                        <span class="text-dark"><i class="fas fa-quote-left"></i></span>
                         <p class="card-text signature text-dark m-0 text-center"> {{ block.value.test_quote }} </p>
                         <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right"></i></span>
                     </div>
