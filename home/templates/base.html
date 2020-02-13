@@ -1,6 +1,4 @@
-{% load static wagtailuserbar wagtailimages_tags google_tags google %}
-<!-- google_tags -->
-
+{% load static wagtailuserbar wagtailimages_tags advert_tags %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -47,18 +45,19 @@
 
 </head>
 
-<body class="{% block body_class %}{% endblock %} container pt-5 d-flex flex-column align-items-center justify-content-center"
-    style="max-width: 700px;">
+<body class="{% block body_class %}{% endblock %} container pt-5 d-flex flex-column align-items-center justify-content-center" style="max-width: 700px;">
     {% wagtailuserbar %}
 
-    {% google_tags %}
 
-    {% if page.google_ad_code and google_site_id %}
+    {% facebook_site_tag %}
+    
+    {% google_site_tag %}
+
+    {% if page.google_ad_code %}
     <!-- Event snippet for CaSE dummy conversion page -->
-    <script>
-        gtag('event', 'conversion', {'send_to': '{% google_tag %}/{{ page.google_ad_code }}'});
-    </script>
+    <script>gtag('event', 'conversion', {'send_to': '{% google_site_id %}/{{ page.google_ad_code }}'});</script>
     {% endif %}
+
 
     <div class="card w-100 border-0 round-corners">
         <div style="position:relative;">
