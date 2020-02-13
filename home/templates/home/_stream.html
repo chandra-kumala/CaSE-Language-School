@@ -48,31 +48,37 @@
         role="button">{{ block.value.text }}</a>
     </div>
 
-
 {% elif block.block_type == 'carousel' %}
-        {% if page.carousel_items.all %}
-        <div class="carousel-embed">
+
+        {% if block.value %}
+        <div class="carousel-embed stream_item {{ block.block_type }}">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                {% if block.value|length > 1 %}
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    {% for carousel_item in block.value %}
+                    <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+                  {% endfor %}
                 </ol>
-                <div class="carousel-inner">
-        
-                    {% for item in page.carousel_items.all %}
+                {% endif %}
+
+                <div class="carousel-inner rounded">
+                    {% for item in block.value %}
                     <div class="carousel-item {% if forloop.first %} active {% endif %}">
                         {% image item.image fill-1080x600 class="d-block img-fluid" alt="..." %}
                         {% if item.title or item.caption %}
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ item.title }}</h5>
-                            <p>{{ item.caption }}</p>
+                        <div class="carousel-caption h-75">
+                            <h2 class="display-4 mw-80">{{ item.title }}</h2 class="display-4">
+                            <p class="d-none d-sm-block">{{ item.caption }}</p class="carousel-caption h-75 d-none d-md-block">
+                            {% if item.link %}
+                            <a href="{{ item.link }}" class="btn btn-primary d-none d-md-block">{{ item.button }}</a class="carousel-caption h-75 d-none d-md-block">
+                            {% endif %}
                         </div>
                         {% endif %}
                     </div>
                     {% endfor %}
         
                 </div>
+                {% if block.value|length > 1 %}
                 <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -81,6 +87,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+                {% endif %}
             </div>
         </div>
         {% endif %}
