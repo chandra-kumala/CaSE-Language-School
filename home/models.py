@@ -48,11 +48,11 @@ class CommonStreamBlock(StreamBlock):
     paragraph = RichTextBlock(blank=True)
     embed = EmbedBlock(blank=True)
     image = ImageChooserBlock(blank=True)
-    testimonial = StructBlock([
-        ('test_name', TextBlock(blank=True)),
-        ('test_quote', TextBlock(blank=True)),
-        ('test_reversed', BooleanBlock(required=False, default=False)),
-        ('test_pic', ImageChooserBlock(blank=True)),
+    mapurl = CharBlock("Google Map URL", max_length=500, null=True, blank=True)
+    calendarurl = URLBlock("URL for calendar", null=True, blank=True)
+    buttonLink = StructBlock([
+        ('text', TextBlock(blank=True)),
+        ('link', URLBlock(label="external URL", blank=True)),
     ])
     buttonLink = StructBlock([
         ('text', TextBlock(blank=True)),
@@ -66,6 +66,11 @@ class CommonStreamBlock(StreamBlock):
         ('buttonUrl', URLBlock(required=False, blank=True)),
         ('background', ImageChooserBlock(required=False, blank=True)),
     ])
+    testimonial = StructBlock([
+        ('test_name', TextBlock(blank=True)),
+        ('test_quote', TextBlock(blank=True)),
+        ('test_reversed', BooleanBlock(required=False, default=False)),
+        ('test_pic', ImageChooserBlock(blank=True)),
     ])
     carousel = ListBlock(CarouselBlock(), icon="image", null=True, blank=True)
 
