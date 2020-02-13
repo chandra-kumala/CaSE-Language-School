@@ -93,7 +93,10 @@ article{
     border-radius: 10px;
   }
 
-  .bg-purple{
+.bg-purple{
     background-color: #b8c5ff;
+  }
+
+.corners-oval{
     border-radius: 100%;
   }
