@@ -92,3 +92,8 @@ article{
 .round-corners {
     border-radius: 10px;
   }
+
+  .bg-purple{
+    background-color: #b8c5ff;
+    border-radius: 100%;
+  }
