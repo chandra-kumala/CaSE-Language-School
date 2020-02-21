@@ -165,6 +165,8 @@ class Social(models.Model):
     ]
 
     def __str__(self):
+        if self.text==None:
+            return "ERROR-CUSTOMER NAME IS NULL"
         return self.text
 
 
