@@ -37,7 +37,7 @@ class SectionPage(Page, Seo):
     body = RichTextField(blank=True)
     my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
 
-    parent_page_types = ['sections.SectionIndexPage', 'sections.ListIndexPage']
+    parent_page_types = ['sections.SectionIndexPage']
 
     def get_context(self, request):
         context = super(SectionPage, self).get_context(request)
@@ -56,6 +56,3 @@ class SectionPage(Page, Seo):
         FieldPanel('body', classname="full"),
         StreamFieldPanel('my_stream'),
     ]
-
-class ListIndexPage(SectionIndexPage):
-    template = 'sections/list_index_page.html'
