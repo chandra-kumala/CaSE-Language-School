@@ -24,14 +24,14 @@
 
         <div class="col-sm-6 m-1">
           <div class="card">
-            <div class="card-header d-flex justify-content-between">
-                <span><h3>{{ post.title }}</h3> </span> <span><a href="{{ post.url }}" class="btn btn-primary align-self-center">Open</a></span>
+            <div class="card-header">
+                <h3>{{ post.title }}</h3>
               </div>
             <div class="card-body">
               <p class="card-text">{{ post.body|richtext }}</p>
             </div>
-            <div class="card-footer text-muted">
-                {{ post.date }}
+            <div class="card-footer text-muted  d-flex justify-content-between">
+                {{ post.date }}<a href="{{ post.url }}" class="btn btn-primary align-self-center py-0">Open</a>
             </div>
           </div>
         </div>
