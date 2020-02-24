@@ -74,7 +74,6 @@ class CommonStreamBlock(StreamBlock):
     ])
     carousel = ListBlock(CarouselBlock(), icon="image", null=True, blank=True)
 
-
     class Meta:
         icon = 'cogs'
 
@@ -164,6 +163,7 @@ class Social(models.Model):
         FieldPanel('text'),
     ]
 
+
     def __str__(self):
         if self.text==None:
             return "ERROR-CUSTOMER NAME IS NULL"
@@ -194,6 +194,7 @@ class ContactPage(AbstractEmailForm, Seo):
                     help_text= 'FontAwesome icons can be used')
  
     template = 'home/contact_page.html'
+
     def get_context(self, request):
         context = super(ContactPage, self).get_context(request)
         context['menuitems'] = request.site.root_page.get_descendants(
@@ -232,7 +233,6 @@ class HomePage(Page, Seo):
         context = super(HomePage, self).get_context(request)
         context['menuitems'] = request.site.root_page.get_descendants(
             inclusive=True).live().in_menu()
-
         return context
 
     content_panels = Page.content_panels + [
