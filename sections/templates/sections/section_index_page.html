@@ -18,11 +18,11 @@
     {% include 'home/_stream.html' %}
     {% endfor %}
 
-    <div class="row">
+    <div class="row px-2">
     {% for post in blogpages %}
     {% with post=post.specific %}
 
-        <div class="col-sm-6 m-1">
+        <div class="col-sm-6 px-auto py-1">
           <div class="card">
             <div class="card-header">
                 <h3>{{ post.title }}</h3>
@@ -31,15 +31,13 @@
               <p class="card-text">{{ post.body|richtext }}</p>
             </div>
             <div class="card-footer text-muted  d-flex justify-content-between">
-                {{ post.date }}<a href="{{ post.url }}" class="btn btn-primary align-self-center py-0">Open</a>
+                <a href="{{ post.url }}" class="btn btn-primary ml-auto">Open</a>
             </div>
           </div>
         </div>
 
-
     {% endwith %}
     {% endfor %}
     </div>
-
 
 {% endblock %}
