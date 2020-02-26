@@ -20,8 +20,12 @@ class SectionIndexPage(Page, Seo):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
-        blogpages = self.get_children().live().order_by('-first_published_at')
-        context['blogpages'] = blogpages
+        if self.alt_template:
+            blogpages = self.get_children().live()
+            context['blogpages'] = blogpages
+        else : 
+            blogpages = self.get_children().live().order_by('-first_published_at')
+            context['blogpages'] = blogpages
         context['menuitems'] = request.site.root_page.get_descendants(
             inclusive=True).live().in_menu()
         return context
@@ -33,7 +37,6 @@ class SectionIndexPage(Page, Seo):
 
 
 class SectionPage(Page, Seo):
-    date = models.DateField("Post date", null=True)
     body = RichTextField(blank=True)
     my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
 
@@ -52,7 +55,6 @@ class SectionPage(Page, Seo):
     ]
 
     content_panels = Page.content_panels + [
-        FieldPanel('date'),
         FieldPanel('body', classname="full"),
         StreamFieldPanel('my_stream'),
     ]
