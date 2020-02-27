@@ -8,9 +8,8 @@
     {% include 'home/_nav.html' %}
 {% endblock %}
 
-<p>
-    {{ self.thank_you_text|richtext }}
-</p>
-
+{% for block in page.thank_you_text %}
+{% include 'home/_stream.html' %}
+{% endfor %}
 
 {% endblock %}
