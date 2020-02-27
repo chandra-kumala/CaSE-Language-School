@@ -180,7 +180,7 @@ class FormField(AbstractFormField):
 
 class ContactPage(AbstractEmailForm, Seo):
     my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
-    thank_you_text = StreamField(CommonStreamBlock(), null=True, blank=True,)
+    thank_you = StreamField(CommonStreamBlock(), null=True, blank=True,)
     css_label = 'Add CSS (FontAwesome and Bootstrap classes) '
 
     button_css = models.CharField(max_length=300, 
@@ -209,7 +209,7 @@ class ContactPage(AbstractEmailForm, Seo):
             FieldPanel('button_css'),
             FieldPanel('button_text'),
         ], heading='Button Settings'),
-        StreamFieldPanel('thank_you_text'),
+        StreamFieldPanel('thank_you'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname='col6'),
