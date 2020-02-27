@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from case.settings.settings import *
+from case.settings.secret import *
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
