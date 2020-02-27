@@ -1,0 +1,101 @@
+$FontImpact: 'Courgette', cursive;
+$FontMain: 'Lora', serif;
+$FontSignature: 'Pacifico', cursive;
+
+$ColorAccent: #b8c5ff;
+
+* {
+    font-family: $FontMain;
+    font-weight: 400;
+}
+
+body {
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    .card {
+        padding: 0;
+    }
+}
+h1, h2, h3, h4 {
+    font-family: $FontImpact;
+    font-weight: 700;
+    margin: 0;
+}
+
+.signature{
+    font-family: $FontSignature;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+p {
+    margin: 0mm;
+}
+
+nav, label {
+    font-family: $FontImpact;
+    font-size: 1.5rem;
+}
+
+
+article{
+    max-width: 540px;
+}
+
+.bg-accent{
+    background-color: $ColorAccent;
+}
+
+.corners-square-bottom {
+    border-radius: 10px 10px 0 0;
+}
+
+.corners-round {
+    border-radius: 10px;
+}
+
+.corners-oval{
+    border-radius: 100%;
+}
+
+iframe[src*=youtube] {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+ul, li {
+    padding: 0%;
+    margin: 0%;
+}
+ol, ul {
+    text-align: left;
+    padding-left: 20%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+// Form styles for contact page.
+
+form{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.errorlist li {
+    text-decoration: solid;
+    border-radius: 5px;
+    list-style-type: none;
+    background-color: #f44336;
+    color: white;
+    }
