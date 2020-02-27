@@ -1,7 +1,7 @@
 {% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 {% if block.block_type == 'heading' %}
-    <h2 class="text-center p-4 bg-purple stream_item {{ block.block_type }}">   
+    <h2 class="text-center p-4 bg-accent stream_item {{ block.block_type }}">   
         {{ block.value }}
     </h2>
 
@@ -77,7 +77,7 @@
                         {% image item.image fill-1080x600 class="d-block img-fluid" alt="..." %}
                         {% if item.title or item.caption %}
                         <div class="carousel-caption h-75">
-                            <h2 class="display-4 mw-80 bg-purple corners-oval">{{ item.title }}</h2 class="display-4">
+                            <h2 class="display-4 mw-80 bg-accent corners-oval">{{ item.title }}</h2 class="display-4">
                             <p class="d-none d-sm-block">{{ item.caption }}</p class="carousel-caption h-75 d-none d-md-block">
                             {% if item.link %}
                             <a href="{{ item.link }}" class="btn btn-primary d-none d-md-block">{{ item.button }}</a class="carousel-caption h-75 d-none d-md-block">
