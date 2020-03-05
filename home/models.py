@@ -60,11 +60,11 @@ class CommonStreamBlock(StreamBlock):
     ])
     jumbotron = StructBlock([
         ('heading', CharBlock(classname="full title", blank=True)),
-        ('classes', CharBlock(label="CSS classes from BS (text-light or text-dark)", required=False, blank=True)),
         ('text', TextBlock(required=False, blank=True)),
+        ('classes', CharBlock(label="CSS classes from BS (text-light or text-dark)", required=False, blank=True)),
+        ('background', ImageChooserBlock(required=False, blank=True)),
         ('buttonLabel', CharBlock(required=False, label="Text on button", blank=True)),
         ('buttonUrl', URLBlock(required=False, blank=True)),
-        ('background', ImageChooserBlock(required=False, blank=True)),
     ])
     testimonial = StructBlock([
         ('test_name', TextBlock(blank=True)),
