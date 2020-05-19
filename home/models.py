@@ -170,60 +170,6 @@ class Social(models.Model):
         return self.text
 
 
-class FormField(AbstractFormField):
-    page = ParentalKey(
-        'ContactPage', 
-        on_delete=models.CASCADE,
-        related_name='form_fields',
-    )
-
-
-class ContactPage(AbstractEmailForm, Seo):
-    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
-    thank_you = StreamField(CommonStreamBlock(), null=True, blank=True,)
-    css_label = 'Add CSS (FontAwesome and Bootstrap classes) '
-
-    button_css = models.CharField(max_length=300, 
-                    default='btn-success', 
-                    null=True, blank=True, 
-                    verbose_name= 'Button CSS',
-                    help_text= 'Classes from FontAwesome and Bootstrap can be used')
-    button_text = models.CharField(max_length=300, 
-                    default='Submit', 
-                    null=True, blank=True,
-                    help_text= 'FontAwesome icons can be used')
- 
-    template = 'home/contact_page.html'
-
-    def get_context(self, request):
-        context = super(ContactPage, self).get_context(request)
-        context['menuitems'] = request.site.root_page.get_descendants(
-            inclusive=True).live().in_menu()
-
-        return context
-
-    content_panels = AbstractEmailForm.content_panels + [
-        StreamFieldPanel('my_stream'),
-        InlinePanel('form_fields', label='Form Fields'),
-        MultiFieldPanel([
-            FieldPanel('button_css'),
-            FieldPanel('button_text'),
-        ], heading='Button Settings'),
-        StreamFieldPanel('thank_you'),
-        MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('from_address', classname='col6'),
-                FieldPanel('to_address', classname='col6'),
-            ]),
-            FieldPanel('subject'),
-        ], heading='Email Settings'),
-    ]
-    
-    promote_panels = AbstractEmailForm.promote_panels + Seo.panels
-
-class OrphanContactPage(ContactPage):
-        template = 'home/orphan_contact_page.html'
-
 
 class HomePage(Page, Seo):
 
