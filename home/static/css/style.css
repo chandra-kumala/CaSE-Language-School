@@ -1,5 +1,5 @@
 * {
-  font-family: "Lora", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -26,7 +26,7 @@ main .card {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Courgette", cursive;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
   margin: 0;
 }
@@ -39,10 +39,11 @@ h1, h2, h3, h4 {
 
 p {
   margin: 0mm;
+  padding-bottom: 1em;
 }
 
 nav, label {
-  font-family: "Courgette", cursive;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.5rem;
 }
 
