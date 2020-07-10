@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-
-{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+{% load static wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -14,8 +13,8 @@
             {% include 'home/_nav.html' %}
         {% endblock %}
 
-        {% for block in page.my_stream %}
-                {% include 'home/_stream.html' %}
-        {% endfor %}
+    {% for stream in page.my_stream %}
+        {% include_block stream %}
+    {% endfor %}
 
 {% endblock content %}
