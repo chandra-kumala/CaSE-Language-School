@@ -9,10 +9,11 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.search import index
 
+from wagtools.social import Seo
 from wagtools.blocks import CommonStreamBlock
 
 
-class HomePage(Page):
+class HomePage(Page, Seo):
     my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
 
     def get_context(self, request):
@@ -28,3 +29,4 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         StreamFieldPanel('my_stream', "Main content..."),
     ]
+    promote_panels = Page.promote_panels + Seo.panels
