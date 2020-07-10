@@ -1,4 +1,4 @@
-{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags social_link_tags %}
 
 {% if menuitems %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light mx-0 my-0 d-flex justify-content-between p-0">
@@ -7,6 +7,7 @@
         <!-- {% if page.url != request.site.root_page.url %}      
         <a class="m-3 text-center text-info rounded-circle py-0" href="{{ page.get_parent.url }}"><i class="fas fa-home fa-2x"></i></a>
         {% endif %} -->
+        {% social_links %}
     </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
