@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'wagtools',
+    'wagtailcodeblock',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
