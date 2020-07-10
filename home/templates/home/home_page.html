@@ -9,9 +9,9 @@
 
 {% block content %}
 
-        {% block nav %}
-            {% include 'home/_nav.html' %}
-        {% endblock %}
+    {% block nav %}
+        {% include 'partials/_nav.html' %}
+    {% endblock %}
 
     {% for stream in page.my_stream %}
         {% include_block stream %}
