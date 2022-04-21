@@ -1,7 +1,7 @@
 from django.db import models
 
-from wagtail.core.models import Page
-from wagtail.core.fields import (
+from wagtail.wagtailcore.models import Page
+from wagtail.wagtailcore.fields import (
     StreamField,
 )
 from wagtail.admin.edit_handlers import (
