@@ -13,6 +13,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from case.settings.settings import *
+from dotenv import load_dotenv
+
+
+load_dotenv(verbose=True)
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
