@@ -1,9 +1,9 @@
 */__pycache__/
 case/settings/__pycache__/
-env
+env*
 */migrations/
 *.pyc
-db.sqlite3
+db.sqlite*
 .vscode/settings.json
 tools/
 contact/
