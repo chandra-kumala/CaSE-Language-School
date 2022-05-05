@@ -12,12 +12,32 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from case.settings.settings import *
 from dotenv import load_dotenv
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 load_dotenv(verbose=True)
 SECRET_KEY = os.getenv('SECRET_KEY')
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
+load_dotenv()
+SECRET_KEY = os.getenv("SECRET_KEY")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'webapp-728957.pythonanywhere.com',
+                 'www.casemedan.com']
+
+
 
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
