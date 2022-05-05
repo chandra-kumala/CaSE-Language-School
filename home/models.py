@@ -1,7 +1,7 @@
 from django.db import models
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import (
+from wagtail.core.models import Page
+from wagtail.core.fields import (
     StreamField,
 )
 from wagtail.admin.edit_handlers import (
@@ -9,7 +9,7 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.search import index
 
-from wagtools.social import Seo
+from wagtools.snippet import Seo, Google, Facebook, SocialLinks
 from wagtools.blocks import CommonStreamBlock
 
 
